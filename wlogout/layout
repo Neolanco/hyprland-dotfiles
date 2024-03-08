@@ -1,0 +1,36 @@
+{
+    "label" : "lock",
+    "action" : " swaylock -C /neoservice/Scripts/wm/swaylock/swaylock.conf",
+    "text" : "Lock",
+    "keybind" : "l"
+}
+{
+    "label" : "logout",
+    "action" : " hyprctl dispatch exit",
+    "text" : "Exit",
+    "keybind" : "e"
+}
+{
+    "label" : "shutdown",
+    "action" : " systemctl poweroff",
+    "text" : "Shutdown",
+    "keybind" : "s"
+}
+{
+    "label" : "suspend",
+    "action" : " systemctl suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}
+{
+    "label" : "reboot",
+    "action" : " systemctl reboot",
+    "text" : "Reboot",
+    "keybind" : "r"
+}
+{
+    "label" : "rebootwin",
+    "action" : " /neoservice/Scripts/grub-reboot-windows.sh",
+    "text" : "Reboot To Windows",
+    "keybind" : "w"
+}
