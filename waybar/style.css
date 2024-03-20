@@ -31,7 +31,13 @@
   padding: 0rem 1rem;
 }
 
+window#waybar.empty{
+  background-color: alpha(#ffffff,0.0);
+}
 
+window.empty{
+  background-color: alpha(#ffffff,1.0);
+}
 
 #workspaces {
   margin-left: 1rem;
