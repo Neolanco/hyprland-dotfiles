@@ -2,10 +2,11 @@ sudo dnf install -y hyprland
 #sudo apk add hyprland mesa-dev cairo libinput pango hyprlang   gdb ninja gcc cmake meson libxcb xcb-proto xcb-util xcb-util-keysyms libxfixes libx11 libxcomposite libxrender pixman wayland-protocols cairo pango seatd libxkbcommon xcb-util-wm libinput libliftoff libdisplay-info cpio tomlplusplus #this is probaply overkill
 sudo apk add wayland-dev cairo-dev libxkbcommon-dev libinput-dev pango-dev tomlplusplus-dev
 
+
 sudo chown -R leon ~/.config/hypr/
 rm ~/.config/hypr/hyprland.conf
 cp /neoservice/Scripts/wm/hyprland/setup/one-time/hyprland.conf.example ~/.config/hypr/hyprland.conf
-
+cp /neoservice/Scripts/wm/hyprland/setup/one-time/hyprlock.conf.example ~/.config/hypr/hyprlock.conf 
 
 
 sudo apk add cmake cpio meson g++

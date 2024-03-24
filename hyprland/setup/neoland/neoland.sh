@@ -12,8 +12,6 @@ sudo apk add cpio meson cmake g++
 hyprpm update
 
 #plugins
-hyprpm add https://github.com/DreamMaoMao/hycov
 hyprpm add https://github.com/Duckonaut/split-monitor-workspaces
 
-#hyprpm enable hycov
 hyprpm enable split-monitor-workspaces

@@ -11,7 +11,7 @@
     "group/systray": { 
         "orientation": "inherit",      
         "modules": [
-             "pulseaudio", "backlight", "battery", "clock", "custom/notification"
+             "pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
         ]
     },
 
@@ -129,6 +129,15 @@
         },
         "on-click": "pavucontrol"
     },
+	"network": {
+		// "interface": "wlp2*", // (Optional) To force the use of this interface
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip-format": "{essid} ({signalStrength}%)",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": "⚠",
+		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		},
     "custom/lock": {
         "tooltip": false,
         "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
