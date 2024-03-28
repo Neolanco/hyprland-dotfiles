@@ -11,7 +11,7 @@
     "group/systray": { 
         "orientation": "inherit",      
         "modules": [
-             "pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
+             "group/pulseaudio-control", "backlight", "network" , "battery", "clock", "custom/notification"
         ]
     },
 
@@ -26,6 +26,35 @@
              "tray"
         ]
     },
+
+    "group/backlight-control": { 
+        "orientation": "inherit",      
+        "modules": [
+        ]
+    },
+    "group/pulseaudio-control": { 
+        "orientation": "inherit",      
+        "modules": [
+            "custom/pa-down", "pulseaudio", "custom/pa-up"
+        ]
+    },
+
+
+    "custom/pa-up": {
+        "tooltip": false,
+        "format": "+",
+        "on-click": "pamixer -i 5",
+        "escape": true
+      },
+    "custom/pa-down": {
+        "tooltip": false,
+        "format": "-",
+        "on-click": "pamixer -d 5",
+        "escape": true
+      },
+
+
+
 
 
     "custom/drawericon": {
@@ -86,11 +115,58 @@
             "20": "B10"
          }
      },
+
+
+
+
+
+
+
+
+
+
+
+
+
+     
+
+
+
+
      
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     "custom/music": {
         "format": "  {}",
         "escape": true,
