@@ -1,0 +1,161 @@
+{
+    "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    // "width": 1280, // Waybar width
+    //"height": 10,
+    // Choose the order of the modules
+    "modules-left": ["custom/app-drawer","custom/osk"],
+    "modules-center": ["group/workspace-control"],
+    "modules-right": ["group/pulseaudio-control","group/backlight-control","custom/power"],
+ 
+
+    "group/backlight-control": { 
+        "orientation": "inherit",      
+        "modules": [
+        "custom/backlight-down", "backlight", "custom/backlight-up"
+        ]
+    },
+    "group/pulseaudio-control": { 
+        "orientation": "inherit",      
+        "modules": [
+            "custom/pa-down", "pulseaudio", "custom/pa-up"
+        ]
+    },
+    "group/workspace-control": { 
+        "orientation": "inherit",      
+        "modules": [
+            "custom/window-move-down", "custom/workspace-down", "hyprland/workspaces", "custom/workspace-up", "custom/window-move-up"
+        ]
+    },
+    "group/window-control": { 
+        "orientation": "inherit",      
+        "modules": [
+            "custom/icon-window"
+        ]
+    },
+
+    "custom/backlight-up": {
+        "tooltip": false,
+        "format": "󰃠",
+        "on-click": "brillo -u 260000 -l -A 10%",
+        "escape": true
+      },
+    "custom/backlight-down": {
+        "tooltip": false,
+        "format": "󰃞",
+        "on-click": "brillo -u 260000 -l -U 10%",
+        "escape": true
+        },
+
+    "custom/pa-up": {
+        "tooltip": false,
+        "format": "󰝝",
+        "on-click": "pamixer -i 5",
+        "escape": true
+      },
+    "custom/pa-down": {
+        "tooltip": false,
+        "format": "󰝞",
+        "on-click": "pamixer -d 5",
+        "escape": true
+        },
+
+    "custom/workspace-up": {
+        "tooltip": false,
+        "format": "󱦰",
+        "on-click": "hyprctl dispatch workspace r+1",
+        "escape": true
+      },
+    "custom/workspace-down": {
+        "tooltip": false,
+        "format": "󱦱",
+        "on-click": "hyprctl dispatch workspace r-1",
+        "escape": true
+        },   
+    "custom/window-move-up": {
+        "tooltip": false,
+        "format": "󰅂",
+        "on-click": "hyprctl dispatch movetoworkspace r+1",
+        "escape": true
+      },
+    "custom/window-move-down": {
+        "tooltip": false,
+        "format": "󰅁",
+        "on-click": "hyprctl dispatch movetoworkspace r-1",
+        "escape": true
+        },
+
+
+
+    "custom/osk": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "killall -34 wvkbd-mobintl",
+        "escape": true
+      },
+
+
+    "custom/app-drawer": {
+        "tooltip": false,
+        "format": "󰀻",
+        "on-click": "nwg-drawer",
+        "escape": true
+        },
+
+
+    "custom/icon-window": {
+        "tooltip": false,
+        "format": "󰘔",
+        "on-click": "",
+        "escape": true
+        },
+
+
+
+    "custom/music": {
+        "format": "  {}",
+        "escape": true,
+        "interval": 5,
+        "tooltip": false,
+        "exec": "playerctl metadata --format='{{ title }}'",
+        "on-click": "playerctl play-pause",
+        "max-length": 50
+    },
+
+
+    "backlight": {
+        "device": "intel_backlight",
+        "format": "{icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+
+
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "format-icons": {
+            "default": ["", "", " "]
+        }
+    },
+
+
+    "custom/power": {
+        "tooltip": false,
+        "on-click": "wlogout -l /neoservice/Scripts/wm/wlogout/layout --css /neoservice/Scripts/wm/wlogout/style.css",
+        "format": "⏻"
+    },
+
+
+
+    "hyprland/workspaces": {
+        "transition-duration": 300,
+         "disable-scroll": true,
+         "sort-by-name": true,
+         "all-outputs": false,
+         "active-only": true
+     }
+
+
+
+
+}

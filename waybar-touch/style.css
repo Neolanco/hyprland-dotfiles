@@ -1,0 +1,81 @@
+@import "colors.css";
+
+* {
+  font-family: "Octicons FantasqueSansMNerdFont";
+  min-height: 0;
+}
+
+#waybar {
+  background: @ctp-base;
+  color: @ctp-text;
+  margin: 5px 5px;
+}
+
+#backlight-control,
+#pulseaudio-control,
+#workspace-control,
+#window-control,
+#custom-backlight-up,
+#custom-backlight-down,
+#custom-pa-up,
+#custom-pa-down,
+#custom-workspace-up,
+#custom-workspace-down,
+#custom-window-move-up,
+#custom-window-move-down,
+#custom-icon-workspace,
+#custom-icon-window,
+#backlight,
+#pulseaudio
+{
+  font-size: 15px;
+  padding: 0rem 1rem 0rem 1rem;
+  margin:  0rem 0.35rem 0rem 0.35rem;
+}
+
+#custom-backlight-up,
+#custom-backlight-down,
+#custom-pa-up,
+#custom-pa-down,
+#custom-workspace-up,
+#custom-workspace-down,
+#custom-window-move-up,
+#custom-window-move-down,
+#backlight
+#pulseaudio
+{
+  background-color: @ctp-surface1;
+  border-radius: 0.5rem;
+}
+
+#backlight-control,
+#pulseaudio-control,
+#workspace-control,
+#window-control
+{
+  font-size: 15px;
+  border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
+  margin: 0.5rem;
+  background-color: @ctp-surface0;
+  padding: 0rem 0rem;
+}
+
+#custom-app-drawer,
+#custom-osk,
+#custom-power
+{
+  background-color: @ctp-surface1;
+  border-radius: 0.5rem;
+  font-size: 15px;
+  padding: 0rem 1rem 0rem 1rem;
+  margin: 0.5rem;
+}
+
+
+window#waybar.empty #window {  
+  background:none;  
+ }
+
+ window#waybar.empty #custom-app-drawer {
+  background-color: transparent;
+}
