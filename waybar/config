@@ -4,14 +4,14 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["custom/app-drawer","custom/osk","custom/workspace-down","hyprland/workspaces","custom/workspace-up"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["group/usrtray", "group/systray"],
 
     "group/systray": { 
         "orientation": "inherit",      
         "modules": [
-             "group/pulseaudio-control", "backlight", "network" , "battery", "clock", "custom/notification"
+             "group/pulseaudio-control", "group/backlight-control", "network" , "battery", "clock", "custom/notification"
         ]
     },
 
@@ -27,9 +27,14 @@
         ]
     },
 
+
+    
+
+
     "group/backlight-control": { 
         "orientation": "inherit",      
         "modules": [
+        "custom/backlight-down", "backlight", "custom/backlight-up"
         ]
     },
     "group/pulseaudio-control": { 
@@ -39,6 +44,18 @@
         ]
     },
 
+    "custom/backlight-up": {
+        "tooltip": false,
+        "format": "+",
+        "on-click": "brillo -u 260000 -l -A 10%",
+        "escape": true
+      },
+    "custom/backlight-down": {
+        "tooltip": false,
+        "format": "-",
+        "on-click": "brillo -u 260000 -l -U 10%",
+        "escape": true
+        },
 
     "custom/pa-up": {
         "tooltip": false,
@@ -51,14 +68,40 @@
         "format": "-",
         "on-click": "pamixer -d 5",
         "escape": true
+        },
+
+    "custom/workspace-up": {
+        "tooltip": false,
+        "format": "+",
+        "on-click": "hyprctl dispatch workspace r+1",
+        "escape": true
+      },
+    "custom/workspace-down": {
+        "tooltip": false,
+        "format": "-",
+        "on-click": "hyprctl dispatch workspace r-1",
+        "escape": true
+        },
+
+
+
+    "custom/osk": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "killall -34 wvkbd-mobintl",
+        "escape": true
       },
 
-
-
+    "custom/app-drawer": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "nwg-drawer",
+        "escape": true
+        },
 
 
     "custom/drawericon": {
-        "format": ""
+        "format": ""
     },
 
     "hyprland/window": {
@@ -115,57 +158,11 @@
             "20": "B10"
          }
      },
-
-
-
-
-
-
-
-
-
-
-
-
-
-     
-
-
-
-
      
     "tray": {
         "icon-size": 21,
         "spacing": 10
     },
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     "custom/music": {
         "format": "  {}",
@@ -202,16 +199,15 @@
         "format-muted": "",
         "format-icons": {
             "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
+        }
     },
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
 		"format-wifi": "",
-		"format-ethernet": "",
+		"format-ethernet": "󰒪",
 		"tooltip-format": "{essid} ({signalStrength}%)",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "⚠",
+		"format-disconnected": "󰅛",
 		"format-alt": "{ifname}: {ipaddr}/{cidr}"
 		},
     "custom/lock": {

@@ -20,35 +20,44 @@
 #custom-lock,
 #custom-power,
 #custom-drawericon,
+#custom-app-drawer,
 #custom-notification,
 #pulseaudio,
-#window,
+#pulseaudio-control,
 #backlight,
+#pa-up,
+#pa-down
+{
+  font-size: 15px;
+  padding: 0rem 1rem 0rem 1rem;
+}
+
+#usrtray,
+#window,
+#systray,
 #workspaces {
   font-size: 15px;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   margin: 0.35rem;
   background-color: @ctp-surface0;
-  padding: 0rem 1rem;
+  padding: 0rem 0.5rem;
 }
 
-window#waybar.empty{
-  background-color: alpha(#ffffff,0.0);
-}
 
-window.empty{
-  background-color: alpha(#ffffff,1.0);
-}
+
+window#waybar.empty #window {  
+  background:none;  
+ }  
+
+
+
+
 
 #workspaces {
   margin-left: 1rem;
 }
 #clock {
   color: @ctp-blue;
-}
-
-#custom-notification {
-margin-right: 1rem;
 }
 
 #workspaces button {
