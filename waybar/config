@@ -23,7 +23,10 @@
             "transition-left-to-right": false},    
         "modules": [
             "custom/drawericon",
-             "tray"
+            "tray",
+            "custom/wb-touch-on",
+            "custom/wb-touch-off"
+
         ]
     },
 
@@ -65,7 +68,7 @@
      
     "tray": {
         "icon-size": 21,
-        "spacing": 10
+        "spacing": 0
     },
 
     "custom/music": {
@@ -124,6 +127,18 @@
         "tooltip": false,
         "on-click": "wlogout &",
         "format": "襤"
+    },
+
+
+    "custom/wb-touch-on": {
+        "tooltip": false,
+        "on-click": "exec -a shellTouchbar waybar -c /neoservice/Scripts/wm/waybar-touch/config -s /neoservice/Scripts/wm/waybar-touch/style.css",
+        "format": "󱊘"
+    },
+    "custom/wb-touch-off": {
+        "tooltip": false,
+        "on-click": "pkill -f shellTouchbar",
+        "format": "󱊗"
     },
 
 
