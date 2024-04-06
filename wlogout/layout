@@ -1,6 +1,12 @@
 {
+    "label" : "suspend",
+    "action" : " systemctl suspend && loginctl suspend",
+    "text" : "Suspend",
+    "keybind" : "u"
+}
+{
     "label" : "lock",
-    "action" : " swaylock -C /neoservice/Scripts/wm/swaylock/swaylock.conf",
+    "action" : "hyprlock",
     "text" : "Lock",
     "keybind" : "l"
 }
@@ -17,12 +23,6 @@
     "keybind" : "s"
 }
 {
-    "label" : "suspend",
-    "action" : " systemctl suspend && loginctl suspend",
-    "text" : "Suspend",
-    "keybind" : "u"
-}
-{
     "label" : "reboot",
     "action" : " systemctl reboot && loginctl reboot",
     "text" : "Reboot",
@@ -33,4 +33,16 @@
     "action" : " /neoservice/Scripts/grub-reboot-windows.sh",
     "text" : "Reboot To Windows",
     "keybind" : "w"
+}
+{
+    "label" : "wb-t-on",
+    "action" : "exec -a shellTouchbar waybar -c /neoservice/Scripts/wm/waybar-touch/config -s /neoservice/Scripts/wm/waybar-touch/style.css",
+    "text" : "Touchbar ON",
+    "keybind" : "+"
+}
+{
+    "label" : "wb-t-off",
+    "action" : "pkill -f shellTouchbar",
+    "text" : "Touchbar OFF",
+    "keybind" : "-"
 }

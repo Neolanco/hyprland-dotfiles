@@ -23,6 +23,7 @@
 #custom-workspace-down,
 #custom-window-move-up,
 #custom-window-move-down,
+#custom-app-close,
 #custom-icon-workspace,
 #custom-icon-window,
 #backlight,
@@ -41,7 +42,7 @@
 #custom-workspace-down,
 #custom-window-move-up,
 #custom-window-move-down,
-#backlight
+#backlight,
 #pulseaudio
 {
   background-color: @ctp-surface1;
@@ -62,6 +63,7 @@
 
 #custom-app-drawer,
 #custom-osk,
+#custom-app-close,
 #custom-power
 {
   background-color: @ctp-surface1;

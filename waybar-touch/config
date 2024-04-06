@@ -4,7 +4,7 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["custom/app-drawer","custom/osk"],
+    "modules-left": ["custom/app-drawer","custom/osk", "custom/app-close"],
     "modules-center": ["group/workspace-control"],
     "modules-right": ["group/pulseaudio-control","group/backlight-control","custom/power"],
  
@@ -99,6 +99,12 @@
         "tooltip": false,
         "format": "󰀻",
         "on-click": "nwg-drawer",
+        "escape": true
+        },
+    "custom/app-close": {
+        "tooltip": false,
+        "format": "",
+        "on-click": "hyprctl dispatch killactive",
         "escape": true
         },
 
