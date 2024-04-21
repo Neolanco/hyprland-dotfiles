@@ -101,3 +101,15 @@ Buttons
 	border-radius: 20px;
 	background-image: image(url("icons/reboot-windows.png"));
 }
+
+#wb-t-on {
+	margin: 10px;
+	border-radius: 20px;
+	background-image: image(url("icons/touchbar.png"));
+}
+
+#wb-t-off {
+	margin: 10px;
+	border-radius: 20px;
+	background-image: image(url("icons/touchbar.png"));
+}
