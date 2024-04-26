@@ -1,4 +1,0 @@
-#source = /neoservice/Scripts/wm/hyprland/hyprland.conf
-source = /neoservice/Scripts/wm/hyprland/hyprland.noplugins.conf
-
-#source = /neoservice/Scripts/wm/hyprland/hyprland-extra.conf
