@@ -6,12 +6,12 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["wlr/taskbar", "group/usrtray", "group/systray"],
+    "modules-right": ["group/usrtray", "group/systray"],
 
     "group/systray": { 
         "orientation": "inherit",      
         "modules": [
-            "privacy", "idle_inhibitor", "pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
+            "idle_inhibitor", "hyprland/submap","pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
         ]
     },
 
@@ -23,16 +23,13 @@
             "transition-left-to-right": false},    
         "modules": [
             "custom/drawericon",
-            "tray",
-            "custom/wb-touch-on",
-            "custom/wb-touch-off"
-
+            "tray"
         ]
     },
 
 
     "custom/drawericon": {
-        "format": ""
+        "format": ""
     },
 
     "hyprland/workspaces": {
@@ -40,12 +37,14 @@
          "disable-scroll": true,
          "sort-by-name": true,
          "all-outputs": false,
-         "format": "{icon}{windows}",
-         "format-window-separator":"-" ,
-         "window-rewrite-default": "",
+         "format": " {icon} {windows}",
+         "format-window-separator":" " ,
+         "window-rewrite-default": "",
          "window-rewrite":{
-            "firefox": "",
-            "alacritty":"",
+            "firefox": "",
+            "alacritty":" ",
+            "kitty":"",
+            "code":"",
          },
          "show-special": false,
          "format-icons": {
@@ -74,26 +73,17 @@
      
     "tray": {
         "icon-size": 21,
-        "spacing": 0
+        "spacing": 1
     },
 
-    "custom/music": {
-        "format": "  {}",
-        "escape": true,
-        "interval": 5,
-        "tooltip": false,
-        "exec": "playerctl metadata --format='{{ title }}'",
-        "on-click": "playerctl play-pause",
-        "max-length": 50
-    },
     "clock": {
         "tooltip-format": "{:%d.%m.%Y}",
-        "format": " {:%H:%M}"
+        "format": "{:%H:%M}"
     },
     "backlight": {
         "device": "intel_backlight",
         "format": "{icon}",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
+        "format-icons": ["","",""]
     },
     "battery": {
         "states": {
@@ -101,52 +91,27 @@
             "critical": 15
         },
         "format": "{icon} {capacity}%",
-        "format-charging": "󰂅 {capacity}%",
-        "format-plugged": "󰂌 {capacity}%",
-        "format-alt": "{icon} {capacity}%",
-        "format-icons": ["󰁺", "󰁻",  "󰁼", "󰁽", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
+        "format-charging": " {icon} {capacity}%",
+        "format-icons": ["","","",""]
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{icon} {volume}%",
-        "format-muted": "",
+        "format-muted": "",
         "format-icons": {
-            "default": ["", "", " "]
+            "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
     },
+
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "",
-		"format-ethernet": "󰒪",
-		"tooltip-format": "{essid} ({signalStrength}%)",
-		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": "󰅛",
-		"format-alt": "{ifname}: {ipaddr}/{cidr}"
+		"format-wifi": "",
+		"format-ethernet": "",
+		"tooltip-format": "{ipaddr} - {essid} - {signalStrength}%",
+		"format-linked": "{ifname} (No IP) ",
+		"format-disconnected": ""
 		},
-    "custom/lock": {
-        "tooltip": false,
-        "on-click": "sh -c '(sleep 0.5s; swaylock --grace 0)' & disown",
-        "format": "",
-    },
-    "custom/power": {
-        "tooltip": false,
-        "on-click": "wlogout &",
-        "format": "襤"
-    },
-
-
-    "custom/wb-touch-on": {
-        "tooltip": false,
-        "on-click": "exec -a shellTouchbar waybar -c /neoservice/Scripts/wm/waybar-touch/config -s /neoservice/Scripts/wm/waybar-touch/style.css",
-        "format": "󱊘"
-    },
-    "custom/wb-touch-off": {
-        "tooltip": false,
-        "on-click": "pkill -f shellTouchbar",
-        "format": "󱊗"
-    },
-
 
 
 
@@ -154,13 +119,13 @@
         "tooltip": false,
         "format": "{icon}",
         "format-icons": {
-          "notification": "<span foreground='red'><sup></sup></span>",
+          "notification": "",
           "none": "",
-          "dnd-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-notification": "",
           "dnd-none": "",
-          "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "inhibited-notification": "",
           "inhibited-none": "",
-          "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+          "dnd-inhibited-notification": "",
           "dnd-inhibited-none": ""
         },
         "return-type": "json",
@@ -175,42 +140,18 @@
       "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
-            "activated": "",
-            "deactivated": ""
+            "activated": "",
+            "deactivated": ""
         }
     },
 
-    "privacy": {
-        "icon-spacing": 4,
-        "icon-size": 18,
-        "transition-duration": 250,
-        "modules": [
-            {
-                "type": "screenshare",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-out",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            },
-            {
-                "type": "audio-in",
-                "tooltip": true,
-                "tooltip-icon-size": 24
-            }
-        ]
-    },
 
 
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 14,
-        "icon-theme": "Numix-Circle",
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close"
+    "hyprland/submap": {
+        "format": "{}",
+        "max-length": 121,
+        "tooltip": false,
+        "always-on": true
     },
 
 
