@@ -30,7 +30,8 @@
 #pa-down,
 #idle_inhibitor,
 #privacy,
-#taskbar 
+#taskbar,
+#submap
 {
   color: @ctp-lavender;
   font-size: 15px;
@@ -41,7 +42,9 @@
 #window,
 #systray,
 #workspaces,
-#taskbar {
+#taskbar,
+#submap
+ {
   font-size: 15px;
   border-radius: 0.5rem 0.5rem 0.5rem 0.5rem;
   margin: 0.35rem;

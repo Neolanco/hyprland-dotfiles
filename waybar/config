@@ -4,14 +4,14 @@
     // "width": 1280, // Waybar width
     //"height": 10,
     // Choose the order of the modules
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["hyprland/workspaces","hyprland/submap"],
     "modules-center": ["hyprland/window"],
     "modules-right": ["group/usrtray", "group/systray"],
 
     "group/systray": { 
         "orientation": "inherit",      
         "modules": [
-            "idle_inhibitor", "hyprland/submap","pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
+            "idle_inhibitor", "temperature" ,"pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
         ]
     },
 
@@ -45,6 +45,7 @@
             "alacritty":" ",
             "kitty":"",
             "code":"",
+            "evince":"",
          },
          "show-special": false,
          "format-icons": {
@@ -73,7 +74,7 @@
      
     "tray": {
         "icon-size": 21,
-        "spacing": 1
+        "spacing": 0
     },
 
     "clock": {
@@ -151,8 +152,16 @@
         "format": "{}",
         "max-length": 121,
         "tooltip": false,
-        "always-on": true
+        "always-on": false
     },
 
+
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        // "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C ",
+        "format": "{temperatureC}°C "
+    },
 
 }
