@@ -6,16 +6,23 @@
     // Choose the order of the modules
     "modules-left": ["hyprland/workspaces","hyprland/submap"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["group/usrtray", "group/systray"],
+    "modules-right": ["group/tray-icons", "group/tray-controls" , "group/tray-status", "custom/notification"],
 
-    "group/systray": { 
+    "group/tray-status": { 
         "orientation": "inherit",      
         "modules": [
-            "idle_inhibitor", "temperature" ,"pulseaudio", "backlight", "network" , "battery", "clock", "custom/notification"
+            "cpu" , "temperature" , "battery", "clock"
         ]
     },
 
-    "group/usrtray": { 
+    "group/tray-controls": { 
+        "orientation": "inherit",      
+        "modules": [
+            "idle_inhibitor","pulseaudio", "backlight", "bluetooth", "network"
+        ]
+    },
+
+    "group/tray-icons": { 
         "orientation": "inherit",  
         "drawer": {
             "transition-duration": 500,
@@ -32,6 +39,14 @@
         "format": ""
     },
 
+
+    "hyprland/window": {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 75
+    },
+
+    
     "hyprland/workspaces": {
         "transition-duration": 300,
          "disable-scroll": true,
@@ -46,6 +61,13 @@
             "kitty":"",
             "code":"",
             "evince":"",
+            "org.telegram.desktop":"",
+            "vesktop":"",
+            ".blueman-manager-wrapped":"",
+            "nautilus":"",
+            "YouTube Music":"",
+            "Unity":"Unity",
+
          },
          "show-special": false,
          "format-icons": {
@@ -111,7 +133,8 @@
 		"format-ethernet": "",
 		"tooltip-format": "{ipaddr} - {essid} - {signalStrength}%",
 		"format-linked": "{ifname} (No IP) ",
-		"format-disconnected": ""
+		"format-disconnected": "",
+        "on-click": "nm-connection-editor"
 		},
 
 
@@ -161,7 +184,26 @@
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         // "critical-threshold": 80,
         // "format-critical": "{temperatureC}°C ",
-        "format": "{temperatureC}°C "
+        "format": "{temperatureC}°C"
     },
+
+    "bluetooth": {
+        // "controller": "controller1", // specify the alias of the controller if there are more than 1 on the system
+        "format": " {status}",
+        "format-disabled": "", // an empty format will hide the module
+        "format-connected": " {num_connections} connected",
+        "tooltip-format": "{controller_alias}\t{controller_address}",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}",
+        "on-click": "blueman-manager"
+    },
+
+    "cpu": {
+        "interval": 10,
+        "format": "{}%",
+        "max-length": 10,
+        "on-click": "resources"
+    },
+
 
 }
