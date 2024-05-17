@@ -42,7 +42,6 @@
 }
 
 #tray-status,
-#tray-icons,
 #tray-controls,
 #workspaces,
 #window,
@@ -67,6 +66,24 @@ window#waybar.empty #window {
    background:none;  
   }  
 
+
+
+
+
+#tray {
+    margin: 0;
+    padding: 0;
+}
+#tray * {
+    margin-left: 8px;
+}
+#custom-drawericon {
+  min-width: 25px;
+}
+#tray-icons {
+  border-left: solid;
+  border-left-width: 0.5;
+}
 
 
 
