@@ -2,7 +2,7 @@
     "label" : "suspend",
     "action" : " systemctl suspend && loginctl suspend",
     "text" : "Suspend",
-    "keybind" : "u"
+    "keybind" : "s"
 }
 {
     "label" : "lock",
@@ -20,7 +20,7 @@
     "label" : "shutdown",
     "action" : " systemctl poweroff && loginctl poweroff",
     "text" : "Shutdown",
-    "keybind" : "s"
+    "keybind" : "p"
 }
 {
     "label" : "reboot",

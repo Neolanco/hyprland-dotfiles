@@ -63,6 +63,8 @@
          "window-rewrite-default": "",
          "window-rewrite":{
             "firefox": "",
+            "chrome": "",
+            "chromium": "",
             "alacritty":" ",
             "kitty":"",
             "code":"",
