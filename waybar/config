@@ -76,11 +76,14 @@
             ".blueman-manager-wrapped":"",
             "nautilus":"",
             "YouTube Music":"",
-            "Unity":"Unity",
+            "Unity":"",
             "com.toolstack.Folio":"",
+            "gnome-disks":"",
+            "bottles": "",
+            "steam_proton": "",
 
          },
-         "show-special": true,
+         "show-special": false,
          "special-visible-only": false,
          "persistent-workspaces": {
                   "*": 10, // 5 workspaces by default on every monitor
@@ -140,7 +143,7 @@
         "device": "intel_backlight",
         "format": "{icon}",
         "format-icons": ["","",""],
-        "tooltip-format": "{percent}%{percent}%"
+        "tooltip-format": "{percent}%"
     },
     "battery": {
         "states": {
