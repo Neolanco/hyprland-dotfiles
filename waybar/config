@@ -86,8 +86,7 @@
          "show-special": false,
          "special-visible-only": false,
          "persistent-workspaces": {
-                  "*": 10, // 5 workspaces by default on every monitor
-                  //"HDMI-A-1": 3 // but only three on HDMI-A-1
+                  "*": 10,
             },
          //"format-icons": {
          //   "1":  "A1",
