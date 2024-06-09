@@ -1,0 +1,9 @@
+# https://github.com/danyspin97/wpaperd?tab=readme-ov-file#wallpaper-configuration
+
+[default]
+duration = "30m"
+mode = "center"
+sorting = "random"
+
+[any]
+path = "/neoservice/Scripts/wm/Wallpapers"
